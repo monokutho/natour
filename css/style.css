@@ -1,3 +1,19 @@
+/*
+0 - 600px: Phone
+600 - 900px: tablet portrait
+900 - 1200px: tablet landscape
+[1200 - 1800px] Where normal styles apply (Desktop approach)
+1800px - + : Big Desktop
+
+$breakpoint argument choices:
+
+- phone
+- tab-port
+- tab-land
+- big-desk
+
+1em = 16px;
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -36,6 +52,15 @@
 html {
   font-size: 62.5%;
   /*default fs 16px, we want to be 10px, so 10/16 = 0.625 = 62.5%*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -644,6 +669,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1500;
+  visibility: hidden;
   opacity: 0;
   width: 0;
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -684,6 +710,7 @@ body {
   transform: scale(80); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
   opacity: 1;
   width: 100%; }
 
