@@ -580,7 +580,8 @@ body {
         display: table-cell;
         float: left;
         vertical-align: middle;
-        width: 50%; } }
+        width: 50%;
+        max-height: 23rem; } }
   .popup__text {
     font-size: 1.3rem;
     margin-bottom: 4rem;
